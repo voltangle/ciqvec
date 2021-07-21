@@ -1,11 +1,13 @@
 // Well, welcome to the source code of Vec!
 import Toybox.Lang;
 import Toybox.System;
+using Toybox.Math;
 
 module CIQVec {
 	class Vector {
-		private var indexes = new [0]; // An array that will hold keys to the data in the dictionary, to reference later.
-		private var content = {}; // A place where the data will be stored. Yea, this implementation just uses Dictionaries to store data
+		private var indexes as Array<Number> = new [0]; // An array that will hold keys to the data in the dictionary, to reference later.
+		private var content as Dictionary<Number, Object> = {}; // A place where the data will be stored. Yea, this implementation just uses Dictionaries to store data
+
 		function initialize() as Void {
 
 		}
@@ -15,26 +17,27 @@ module CIQVec {
 			if (self.indexes[index] == null) {
 				throw new IndexOutOfBoundsException("The index specified is out of bounds of the vector");
 			}
+			return self.content[self.indexes[index]];
 		}
 
 		/// Updates an item at a specified index. 
-		function update(index as Number, item as Object) as Void {
-
+		function update(index as Number, data as Object?) as Void {
+			self.content[indexes[index]] = data;
 		}
 
 		/// Adds a new item to the vector.
-		function push(item as Object) as Void {
-
+		function push(item as Object?) as Number {
+			var key = Math.rand();
+			self.indexes.add(key); // Add to index
+			self.content.put(key, item); // And add the value to the dictionary
+			return self.indexes.indexOf(key); // And also return the index of te newly created item
 		}
 
 		/// Removes an item at a specified index.
 		function pop(index as Number) as Void {
-
-		}
-
-		/// Returns a string representation of the vector.
-		function toString() as String {
-
+			// Clears this item from the indexes and the dictionary
+			self.content.remove(self.indexes[index]);
+			self.indexes.remove(self.indexes[index]);
 		}
 
 		function slice(startIndex as Number, endIndex as Number) as Vector {
