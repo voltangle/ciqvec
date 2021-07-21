@@ -1,5 +1,5 @@
 <iq:manifest xmlns:iq="http://www.garmin.com/xml/connectiq" version="3">
-    <iq:barrel id="97C0E3CE-D4F0-4ED3-A1C0-8ADB006D7342" minSdkVersion = "1.2.0" module="Vec" version="1.0.0">
+    <iq:barrel id="97C0E3CE-D4F0-4ED3-A1C0-8ADB006D7342" minSdkVersion = "1.2.0" module="CIQVec" version="1.0.0">
         <iq:products />
         <iq:permissions />
         <iq:languages />
