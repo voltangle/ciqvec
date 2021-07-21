@@ -27,7 +27,7 @@ module CIQVec {
 
 		/// Adds a new item to the vector.
 		function push(item as Object?) as Number {
-			var key = Math.rand();
+			var key = Math.rand(); // Creates random key
 			self.indexes.add(key); // Add to index
 			self.content.put(key, item); // And add the value to the dictionary
 			return self.indexes.indexOf(key); // And also return the index of te newly created item
