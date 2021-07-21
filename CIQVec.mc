@@ -45,7 +45,8 @@ module CIQVec {
 		}
 
 		function clear() as Void {
-
+			self.indexes.removeAll(null); // Clear indexes
+			// Need to implement functionality to clear the content variable too
 		}
 	}
 
