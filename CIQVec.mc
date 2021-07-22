@@ -41,12 +41,9 @@ module CIQVec {
 		}
 
 		function slice(startIndex as Number, endIndex as Number) as Vector {
-
-		}
-
-		function clear() as Void {
-			self.indexes.removeAll(null); // Clear indexes
-			// Need to implement functionality to clear the content variable too
+			var slice = new Vector(); // Here will be all data corresponding to the slice range
+			var sliceKeys = new [endIndex - startIndex]; // This array will hold all the keys that correspond to the slice range
+			for (var i = 0; i >= sliceKeys.lenght(); i++)
 		}
 	}
 
@@ -55,7 +52,7 @@ module CIQVec {
 		private var msg as String = "Error message was not specified";
 		function initialize(msg as String?) as Void {
 			Exception.initialize();
-			if (msg == null) {
+			if (msg != null) {
 				self.msg = msg;
 			}
 		}
