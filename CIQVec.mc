@@ -14,7 +14,7 @@ module CIQVec {
 
 		/// Returns an item from the specified index.
 		function get(index as Number) as Object {
-			if (self.indexes[index] == null) {
+			if (self.indexes.size() < index) {
 				throw new IndexOutOfBoundsException("The index specified is out of bounds of the vector");
 			}
 			return self.content[self.indexes[index]];
@@ -22,6 +22,9 @@ module CIQVec {
 
 		/// Updates an item at a specified index. 
 		function update(index as Number, data as Object?) as Void {
+			if (self.indexes.size() < index) {
+				throw new IndexOutOfBoundsException("The index specified is out of bounds of the vector");
+			}
 			self.content[indexes[index]] = data;
 		}
 
