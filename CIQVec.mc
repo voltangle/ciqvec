@@ -5,10 +5,10 @@ using Toybox.Math;
 
 module CIQVec {
 	class Vector {
-		private var indexes as Array<Number> = new [0]; // An array that will hold keys to the data in the dictionary, to reference later.
-		private var content as Dictionary<Number, Object> = {}; // A place where the data will be stored. Yea, this implementation just uses Dictionaries to store data
+		private var indexes = new [0]; // An array that will hold keys to the data in the dictionary, to reference later.
+		private var content = {}; // A place where the data will be stored. Yea, this implementation just uses Dictionaries to store data
 
-		function initialize() as Void {
+		function initialize() {
 
 		}
 
@@ -43,21 +43,24 @@ module CIQVec {
 		function slice(startIndex as Number, endIndex as Number) as Vector {
 			var slice = new Vector(); // Here will be all data corresponding to the slice range
 			var sliceKeys = new [endIndex - startIndex]; // This array will hold all the keys that correspond to the slice range
-			for (var i = 0; i >= sliceKeys.lenght(); i++)
+			for (var i = 0; i >= sliceKeys.size(); i++) {
+
+			}
+			return slice;
 		}
 	}
 
 	/// A simple class for an exception
 	class IndexOutOfBoundsException extends Lang.Exception {
 		private var msg as String = "Error message was not specified";
-		function initialize(msg as String?) as Void {
+		function initialize(msg as String?) {
 			Exception.initialize();
 			if (msg != null) {
 				self.msg = msg;
 			}
 		}
 
-		function getErrorMessage() as String {
+		function getErrorMessage() as String? {
 			return self.msg;
 		}
 	}
