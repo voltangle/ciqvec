@@ -1,6 +1,6 @@
 // Well, welcome to the source code of Vec!
 import Toybox.Lang;
-import Toybox.System;
+using Toybox.System;
 using Toybox.Math;
 
 module CIQVec {
@@ -50,6 +50,20 @@ module CIQVec {
 
 			}
 			return slice;
+		}
+
+		function size() as Number {
+			return self.indexes.size();
+		}
+
+		//! Returns a string version of the vector.
+		function toString() as String {
+			var result = "[";
+			for (var i = 0; i <= self.indexes.size(); i++) {
+				result = result + self.content[self.indexes[i]];
+			}
+			result = result + "]";
+			return result;
 		}
 	}
 
